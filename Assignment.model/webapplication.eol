@@ -1,1 +1,30 @@
- 
+ /* operations in EOL, checking if all the entities in our model has attribute
+
+for (entity in Entity.all){
+	entity.hasNext().println(entity.name + ":");
+}
+
+operation Entity hasNext() : Boolean{
+	return not self.attributes.isEmpty();
+	}*/
+
+//checking if all the content in our model has entities
+
+for (data in Data.all){
+	for (entity in Entity.all){
+		entity.hasNext().println(entity.name + ":");
+	}
+	//data.hasNext().println(data.name + ":");
+	}
+	
+operation Entity hasNext() : Boolean{
+	return self.name.isEmpty();
+	}
+	/*
+	
+	//operation in the context of primitive type
+	
+	8.plusthree().println();
+	operation Integer plusthree() : Integer{
+		return self + 4;
+	}

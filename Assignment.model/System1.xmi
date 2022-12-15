@@ -7,23 +7,23 @@
   <Data>
     <Content
         xsi:type="Entity"
-        name="Food"
-        RelationA="food">
+        name="Drink"
+        RelationA="Drink">
       <Content
           xsi:type="Attributes"
-          name="FoodID"
+          name="DrinkID"
           Type="int"
           PrimaryKey="true"/>
       <Content
           xsi:type="Attributes"
-          name="FoodName"/>
+          name="DrinkName"/>
       <Content
           xsi:type="Attributes"
-          name="FoodPicture"
+          name="DrinkPicture"
           Type="image"/>
       <Content
           xsi:type="Attributes"
-          name="FoodOverAllRating"
+          name="DrinkOverAllRating"
           Type="float"/>
       <Content
           xsi:type="Attributes"
@@ -68,7 +68,7 @@
           Type="image"/>
       <Content
           xsi:type="Attributes"
-          name="FoodID"
+          name="DrinkID"
           Type="int"
           ForeignKey1="//@Data.0/@Content.0/@Content.0"/>
     </Content>
@@ -97,97 +97,97 @@
     </Content>
     <Content
         xsi:type="Entity"
-        name="Chef"
-        RelationA="chef">
+        name="Bartender"
+        RelationA="bartender">
       <Content
           xsi:type="Attributes"
-          name="ChefID"
+          name="BartenderID"
           Type="int"
           PrimaryKey="true"/>
       <Content
           xsi:type="Attributes"
-          name="ChefFirstName"/>
+          name="BartenderFirstName"/>
       <Content
           xsi:type="Attributes"
-          name="ChefLastName"/>
+          name="BartenderLastName"/>
       <Entity
           xsi:type="Attributes"
-          name="FoodID"
+          name="DrinkID"
           ForeignKey1="//@Data.0/@Content.3/@Entity"/>
     </Content>
   </Data>
   <Content>
-    <Page name="FoodListPage">
+    <Page name="DrinkListPage">
       <Content>
         <Content
             xsi:type="DynamicContent">
           <DynamicContent
               xsi:type="Entity"
-              name="FoodList"
-              RelationA="Food">
+              name="DrinkList"
+              RelationA="Drink">
             <DynamicContent
                 xsi:type="Attributes"
-                name="FoodList ID"
-                RelationA="FoodListID"
+                name="DrinkList ID"
+                RelationA="DrinkListID"
                 PrimaryKey="true"/>
             <Entity
                 xsi:type="Attributes"
-                name="Name of Food"
-                RelationA="FoodName"/>
+                name="Name of Drink"
+                RelationA="DrinkName"/>
           </DynamicContent>
         </Content>
       </Content>
     </Page>
-    <Page name="FoodReviewPage">
+    <Page name="DrinkReviewPage">
       <Content>
         <Content
             xsi:type="DynamicContent">
           <Content
               xsi:type="Entity"
-              name="Food"
-              RelationA="Food">
+              name="Drink"
+              RelationA="Drink">
             <Content
                 xsi:type="Individual"
-                name="Food">
+                name="Drink">
               <Content
                   xsi:type="Attributes"
-                  name="ID of Food"
-                  RelationA="foodID"
+                  name="ID of Drink"
+                  RelationA="drinkID"
                   Type="int"
                   PrimaryKey="true"/>
               <Content
                   xsi:type="Attributes"
-                  name="Name of Food"
-                  RelationA="FoodName"/>
+                  name="Name of Drink"
+                  RelationA="DrinkName"/>
               <Content
                   xsi:type="Attributes"
-                  name="Collection of Food Pictures"
-                  RelationA="FoodPictures"
+                  name="Collection of Drink Pictures"
+                  RelationA="DrinkPictures"
                   Type="images"/>
               <Content
                   xsi:type="Attributes"
-                  name="Food Description"
-                  RelationA="FoodDescription"
+                  name="Drink Description"
+                  RelationA="DrinkDescription"
                   Type="text"/>
               <Content
                   xsi:type="Attributes"
-                  name="Price of Food"
-                  RelationA="FoodPrice"
+                  name="Price of Drink"
+                  RelationA="DrinkPrice"
                   Type="int"/>
               <Content
                   xsi:type="Attributes"
                   name="Currency"
-                  RelationA="FoodCurrency"
+                  RelationA="DrinkCurrency"
                   Type="currency"/>
               <Content
                   xsi:type="Attributes"
-                  name="Ingredients of the Food"
-                  RelationA="FoodIngredients"
+                  name="Ingredients of the Drink"
+                  RelationA="DrinkIngredients"
                   Type="List"/>
               <DynamicContent
                   xsi:type="Attributes"
-                  name="Food Ratings"
-                  RelationA="FoodRatings"
+                  name="Drink Ratings"
+                  RelationA="DrinkRatings"
                   Type="int"/>
             </Content>
           </Content>
@@ -239,25 +239,25 @@
           </Content>
           <Content
               xsi:type="Entity"
-              name="Chef"
-              RelationA="Chef">
+              name="Bartender"
+              RelationA="Bartender">
             <Content
                 xsi:type="Individual"
-                name="Chef">
+                name="Bartender">
               <Content
                   xsi:type="Attributes"
-                  name="ID of Chef"
-                  RelationA="chefID"
+                  name="ID of Bartender"
+                  RelationA="bartenderID"
                   Type="int"
                   PrimaryKey="true"/>
               <Content
                   xsi:type="Attributes"
-                  name="Chef First Name"
-                  RelationA="ChefFirstName"/>
+                  name="Bartender First Name"
+                  RelationA="BartenderFirstName"/>
               <Content
                   xsi:type="Attributes"
-                  name="Chef Last Name"
-                  RelationA="ChefLastName"/>
+                  name="Bartender Last Name"
+                  RelationA="BartenderLastName"/>
             </Content>
           </Content>
         </Content>
@@ -265,21 +265,21 @@
             name="Static Content">
           <Content
               xsi:type="Index"
-              name="Restaurant">
+              name="Bar">
             <Content
                 xsi:type="Attributes"
-                name="ID of Restaurant"
-                RelationA="restaurantID"
+                name="ID of Bar"
+                RelationA="barID"
                 Type="int"
                 PrimaryKey="true"/>
             <Content
                 xsi:type="Attributes"
-                name="Restaurant Name"
-                RelationA="RestaurantName"/>
+                name="Bar Name"
+                RelationA="BarName"/>
             <Content
                 xsi:type="Attributes"
-                name="Restaurant Address"
-                RelationA="RestaurantAddress"/>
+                name="Bar Address"
+                RelationA="BarAddress"/>
           </Content>
         </Content>
         <Content
@@ -290,7 +290,7 @@
             <Element
                 name="Add Ratings Component"
                 Attribute="//@Content.0/@Page.1/@Content.0/@Content.0/@Content.1/@Content.0/@Content.6"
-                Tooltip="Please add a rating for this food"/>
+                Tooltip="Please add a rating for this drink"/>
             <Element
                 name="Add Picture Component"
                 Attribute="//@Content.0/@Page.1/@Content.0/@Content.0/@Content.1/@Content.0/@Content.2"

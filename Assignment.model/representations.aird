@@ -3,4 +3,5 @@
   <semanticResources>webapplication.ecore</semanticResources>
   <semanticResources>System.xmi</semanticResources>
   <semanticResources>System.genmodel</semanticResources>
+  <semanticResources>System1.xmi</semanticResources>
 </viewpoint:DAnalysis>

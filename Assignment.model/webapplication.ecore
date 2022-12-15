@@ -69,7 +69,12 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="Element" lowerBound="1"
         upperBound="-1" eType="#//Element" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Relation" eSuperTypes="#//Entity"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Relation" eSuperTypes="#//Entity">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Left" lowerBound="1" eType="#//Entity"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Right" lowerBound="1" eType="#//Entity"
+        containment="true"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="References" eSuperTypes="#//Features #//Entity">
     <eStructuralFeatures xsi:type="ecore:EReference" name="ForeignKey" eType="#//Entity"
         containment="true"/>
@@ -77,9 +82,7 @@
   <eClassifiers xsi:type="ecore:EClass" name="Attributes" eSuperTypes="#//Features">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="Type" eType="#//DataType"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="PrimaryKey" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="ForeignKey" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="ForeignKey1" unique="false"
-        lowerBound="1" eType="#//Attributes" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ForeignKey1" eType="#//Attributes"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="Methodtype">
     <eLiterals name="POST" literal="POST"/>
