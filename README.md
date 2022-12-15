@@ -10,20 +10,20 @@ Group name: Chicken Restaurant
 2. Mercy Bamiduro 286705
 3. Korawit Rupanya 286847
 ---
-    this project perform “Glot”a domain-specific language (DSL) for specifying Web Applications on the EMF platform by using one among thefollowing tools notations:
+>this project perform “Glot”a domain-specific language (DSL) for specifying Web Applications on the EMF platform by using one among the following tools notations:
 - EMF
 - Emfatic
 - OCL In Ecore
 
 ## Task A4.1
-    Define a metamodel in Emfatic or EMF for describing your domain(as illustrated during the course) satisfying the following
+>Define a metamodel in Emfatic or EMF for describing your domain(as illustrated during the course) satisfying the following
 
 - 12 metaclasses
 
 ## Task A4.2
-    Instantiate the metamodel by two concrete instances and make sure that each concept(represented as metaclasses) at the metamodel level can be instantiated in your models.
+>Instantiate the metamodel by two concrete instances and make sure that each concept(represented as metaclasses) at the metamodel level can be instantiated in your models.
 ## Task A4.3
-    Define metamodel constraints(and“critiques”in the case of EVL),operation, and derived fields in OCL or EVL/EOL
+>Define metamodel constraints(and“critiques”in the case of EVL),operation, and derived fields in OCL or EVL/EOL
 - 3 constraints (critique and constraints) to validate models
 - 2 operations
 - 2 derived fields (only for OCL)
