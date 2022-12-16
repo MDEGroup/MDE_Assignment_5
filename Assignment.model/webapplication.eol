@@ -11,23 +11,34 @@ operation Entity hasNext() : Boolean{
 //checking if all the content in our model has entities
 
 Data.println("Header : ");
+for (content in Content)
+{
+	if ((content.isNotEmpty()) 
+		and (content.isEntity() or content.isAttributes()))
+	{
+		content.type.name.print() + content.name.println(" : ");
+	}
+}
+			
 //for (data in Data.all)
 //{
-	for (entity in Entity.all)
+/*	for (entity in Entity.all)
 	{
 		if (entity.hasNext() == false)
 		{
 			entity.name.println("\n\nEntity : ");
 		
-			for (attribute in entity->Attributes.all)
+			
+			for (attribute in Attributes.all)
 			{
-				if (entity.hasNext() == false)
+				if ((attribute.hasNextA() == false) 
+				)
 				{
 					attribute.name.println("Attribute : ");
 				}
 			}
 		}
-	}
+	}*/
 //}
 	
 operation Entity hasNext() : Boolean
@@ -38,6 +49,24 @@ operation Entity hasNext() : Boolean
 operation Attributes hasNextA() : Boolean
 {
 	return self.name.isEmpty();
+}
+
+operation Content isNotEmpty() : Boolean
+{
+	if ( (self.name == null) )
+		return false;
+	else
+		return (self.name.isEmpty() == false);
+}
+
+operation Content isEntity() : Boolean
+{
+	return (self.type.name.toUpperCase().contains("ENTITY") or self.type.name.toUpperCase().contains("ENTITIES")) ;
+}
+
+operation Content isAttributes() : Boolean
+{
+	return self.type.name.toUpperCase().contains("ATTRIBUTES");
 }
 	/*
 	

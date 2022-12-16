@@ -42,7 +42,7 @@ context Content
 
 }*/
 		
-context Entity
+/*context Entity
 {
 	constraint HasMorethanThreeAttribute
 	{
@@ -79,7 +79,6 @@ context DataType
 		check: self.Email.contains("@") == false
 		message: "Email   "+ self.Email + "   is in incorrect style "
 	}
-
 }
 
 //checking for Content with exactly 3 entities
@@ -90,5 +89,15 @@ context DataType
 		check: self.Email.contains(".com") == false
 		message: "Email   "+ self.Email + "   is in incorrect style "
 	}
+}*/
 
+context Data
+{
+	critique HasEntities
+	{
+		check: self.contents.size() <= 3
+		message: "Entity   "+ self.name + "   this condition fails; entities has more than 3 attribues"
+		//check: (self.type.name.toUpperCase().contains("ENTITY") or self.type.name.toUpperCase().contains("ENTITIES")).size() >= 3
+		//message: "Entity   "+ self.name + "   this condition fails; entity has less than 3 or no entity "
+	}
 }
