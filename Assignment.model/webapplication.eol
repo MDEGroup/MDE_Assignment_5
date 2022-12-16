@@ -10,16 +10,35 @@ operation Entity hasNext() : Boolean{
 
 //checking if all the content in our model has entities
 
-for (data in Data.all){
-	for (entity in Entity.all){
-		entity.hasNext().println(entity.name + ":");
+Data.println("Header : ");
+//for (data in Data.all)
+//{
+	for (entity in Entity.all)
+	{
+		if (entity.hasNext() == false)
+		{
+			entity.name.println("\n\nEntity : ");
+		
+			for (attribute in entity->Attributes.all)
+			{
+				if (entity.hasNext() == false)
+				{
+					attribute.name.println("Attribute : ");
+				}
+			}
+		}
 	}
-	//data.hasNext().println(data.name + ":");
-	}
+//}
 	
-operation Entity hasNext() : Boolean{
+operation Entity hasNext() : Boolean
+{
 	return self.name.isEmpty();
-	}
+}
+
+operation Attributes hasNextA() : Boolean
+{
+	return self.name.isEmpty();
+}
 	/*
 	
 	//operation in the context of primitive type

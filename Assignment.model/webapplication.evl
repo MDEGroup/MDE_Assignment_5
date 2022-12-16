@@ -18,24 +18,7 @@ context Page
 	
 }
 		
-//checking if any contents have null value
-context Content
-{
-	constraint NameNotEmpty
-	{
-		check: self.name.isDefined()
-	}
-}
-		
- //constraint checking for primarykey in all the attributes in our model		 
-context Attribute
-{		
-	constraint Attributeisprimarykey
-	{
-		check: "Attributes"  + self.name.type() = Boolean
-				
-	}
-}
+
 
 //checking for with attributes in entity that satisfy the condition >=3
 context Entity
@@ -59,6 +42,33 @@ context Content
 
 }*/
 		
+context Entity
+{
+	constraint HasMorethanThreeAttribute
+	{
+		check: self.attributes.size() >= 3
+		message: "Entity   "+ self.name + "   this condition fails; entities has more than 3 attribues"
+	}
+}
+
+//checking if any contents have null value
+context Content
+{
+	constraint NameNotEmpty
+	{
+		check: self.name.isDefined()
+	}
+}
+		
+ //constraint checking for primarykey in all the attributes in our model		 
+context Attribute
+{		
+	constraint Attributeisprimarykey
+	{
+		check: "Attributes"  + self.name.type() = Boolean
+				
+	}
+}
 
 
 //checking for Content with exactly 3 entities
