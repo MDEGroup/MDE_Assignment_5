@@ -1,7 +1,5 @@
- 
 
 //printing all entities and attributes of contents which are not empty
-
 Data.println("Header : ");
 for (content in Content)
 {
@@ -11,8 +9,6 @@ for (content in Content)
 		content.type.name.print() + content.name.println(" : ");
 	}
 }
-			
-
 	
 operation Entity hasNext() : Boolean
 {
