@@ -50,7 +50,9 @@ We have aslo define the following operations as seen in the image below and in t
 - Printing all entities of contents which are not empty.
 - Printing all attributes of contents which are not empty.
 
+<img width="910" alt="Screenshot 2022-12-17 at 15 19 13" src="https://user-images.githubusercontent.com/93517988/208246426-cffb5ce9-92ed-4bc1-ac6e-061de6ea7ba0.png">
 
+<i>Also find attached the videos of the outputs for our models.</i>
 
 
 
