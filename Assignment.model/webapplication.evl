@@ -30,7 +30,7 @@ context Content
 		message : "Error : Attributes Name can not more than 5 characters | " + self.name
  	}
  	
-	critique HasAttributes
+	critique HasContents
 	{
 		check: self.name.size() >= 30
 		message: self.type.name + " " + self.name + " can not be more than 30 in a system"
