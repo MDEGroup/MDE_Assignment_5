@@ -1,15 +1,6 @@
  
- /* operations in EOL, checking if all the entities in our model has attribute
 
-for (entity in Entity.all){
-	entity.hasNext().println(entity.name + ":");
-}
-
-operation Entity hasNext() : Boolean{
-	return not self.attributes.isEmpty();
-	}*/
-
-//checking if all the content in our model has entities
+//printing all entities and attributes of contents which are not empty
 
 Data.println("Header : ");
 for (content in Content)
@@ -21,26 +12,7 @@ for (content in Content)
 	}
 }
 			
-//for (data in Data.all)
-//{
-/*	for (entity in Entity.all)
-	{
-		if (entity.hasNext() == false)
-		{
-			entity.name.println("\n\nEntity : ");
-		
-			
-			for (attribute in Attributes.all)
-			{
-				if ((attribute.hasNextA() == false) 
-				)
-				{
-					attribute.name.println("Attribute : ");
-				}
-			}
-		}
-	}*/
-//}
+
 	
 operation Entity hasNext() : Boolean
 {
@@ -69,11 +41,4 @@ operation Content isAttributes() : Boolean
 {
 	return self.type.name.toUpperCase().contains("ATTRIBUTES");
 }
-	/*
 	
-	//operation in the context of primitive type
-	
-	8.plusthree().println();
-	operation Integer plusthree() : Integer{
-		return self + 4;
-	}
