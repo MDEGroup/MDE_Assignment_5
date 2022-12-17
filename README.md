@@ -26,7 +26,7 @@ Based on our previous projects developed on MPS, we defined 18 metaclasses. With
 ## Task A4.2
 >Instantiate the metamodel by two concrete instances and make sure that each concept(represented as metaclasses) at the metamodel level can be instantiated in your models.
 
-- The metamodel was further instantiated by the first concrete instances named <b><i>“System.xmi”</i></b> with each concept represented in the above metaclasses, well instantiated in the model as seen in the image below;
+- Our metamodel was further instantiated by the first concrete instances named <b><i>“System.xmi”</i></b> with each concept represented in the above metaclasses, well instantiated in the model as seen in the image below;
 
 <img width="728" alt="Screenshot 2022-12-16 at 23 53 41" src="https://user-images.githubusercontent.com/93517988/208234184-b89a9336-06c5-4cc9-a48d-6187091222a2.png">
 
