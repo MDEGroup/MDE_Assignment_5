@@ -18,7 +18,7 @@ Group name: Chicken Restaurant
 ## Task A4.1
 >Define a metamodel in Emfatic or EMF for describing your domain(as illustrated during the course) 
 
-Based on our previous projects developed on MPS, we defined 18 metaclasses. With each metaclass containing at least one attribute or reference as demonstrated in the screenshot below. Also, the metamodel was properly defined and contains inheritance, containment, enumeration types, attributes, data types, etc.
+Based on our previous projects developed on MPS, we defined 16 metaclasses. With each metaclass containing at least one attribute or reference as demonstrated in the screenshot below. Also, the metamodel was properly defined and contains inheritance, containment, enumeration types, attributes, data types, etc.
 
 <img width="728" alt="Screenshot 2022-12-16 at 23 47 47" src="https://user-images.githubusercontent.com/93517988/208234029-97606eab-87f4-4d4b-8714-b25f4e3fd1db.png">
 
@@ -37,9 +37,21 @@ Based on our previous projects developed on MPS, we defined 18 metaclasses. With
 
 ## Task A4.3
 >Define metamodel constraints(and“critiques”in the case of EVL),operation, and derived fields in OCL or EVL/EOL
-- 3 constraints (critique and constraints) to validate models
-- 2 operations
-- 2 derived fields (only for OCL)
+
+We have defined the following constraints for both models as demonstrated in the image below and available in the video recording attached also.
+- To check if the Entity has special characters.
+- To check if the Attributes has special characters.
+- To check if the Entity name has more than 5 characters.
+- To check if the Attributes name has more than 5 characters.
+
+<img width="848" alt="Screenshot 2022-12-17 at 14 46 34" src="https://user-images.githubusercontent.com/93517988/208245449-e619a43e-15f5-46dd-9014-ea0b3deb6f04.png">
+
+We have aslo define the following operations as seen in the image below and in the video recording. 
+- Printing all entities of contents which are not empty.
+- Printing all attributes of contents which are not empty.
+
+
+
 
 
 
