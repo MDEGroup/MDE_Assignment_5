@@ -18,7 +18,7 @@ Group name: Chicken Restaurant
 ## Task A4.1
 >Define a metamodel in Emfatic or EMF for describing your domain(as illustrated during the course) 
 
-Based on our previous projects developed on MPS, we defined 18 metaclasses. With each metaclass containing at least one attribute or reference as seen in the screenshot below. Also, the metamodel was properly defined and contains inheritance, containment, enumeration types, attributes, data types, etc.
+Based on our previous projects developed on MPS, we defined 18 metaclasses. With each metaclass containing at least one attribute or reference as demonstrated in the screenshot below. Also, the metamodel was properly defined and contains inheritance, containment, enumeration types, attributes, data types, etc.
 
 <img width="728" alt="Screenshot 2022-12-16 at 23 47 47" src="https://user-images.githubusercontent.com/93517988/208234029-97606eab-87f4-4d4b-8714-b25f4e3fd1db.png">
 
