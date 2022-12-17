@@ -38,13 +38,17 @@ Based on our previous projects developed on MPS, we defined 16 metaclasses. Each
 ## Task A4.3
 >Define metamodel constraints(and“critiques”in the case of EVL),operation, and derived fields in OCL or EVL/EOL
 
-We have defined the following constraints for both models as demonstrated in the image below and available in the video recording attached also.
+We have defined the following constraints and critique for both models as demonstrated in the image below and available in the video recording attached also.
 - To check if the Entity has special characters.
 - To check if the Attributes have special characters.
 - To check if the Entity name has more than 5 characters.
 - To check if the Attributes name has more than 5 characters.
+- Content cannot be more than 30 in a system.
 
 <img width="848" alt="Screenshot 2022-12-17 at 14 46 34" src="https://user-images.githubusercontent.com/93517988/208245449-e619a43e-15f5-46dd-9014-ea0b3deb6f04.png">
+
+<img width="910" alt="Screenshot 2022-12-17 at 19 38 37" src="https://user-images.githubusercontent.com/93517988/208256608-fcbf8b04-3e92-42cf-80d3-6011f94dc9ea.png">
+
 
 We have also defined the following operations as seen in the image below and in the video recording. 
 - Printing all entities of contents that are not empty.
