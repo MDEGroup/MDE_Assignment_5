@@ -1,103 +1,41 @@
-/*context Entity
+context Content 
 {
-	constraint HasMorethanThreeAttribute
-	{
-		check: self.attributes.size() <= 3
-		message: "Entity   "+ self.name + "   this condition fails; entities has more than 3 attribues"
-	}
-}
-		
-//constraint in the context of page, checking for number of contentsin a page.
-context Page
-{
-	constraint hascontent
-	{
-		check: self.contents.size() > 3
-		message: "page   "+ self + "   this condition fails; page has more than 3 content or no entity "
-	}
-	
-}
-		
-
-
-//checking for with attributes in entity that satisfy the condition >=3
-context Entity
-{
-	critique HasAttributes
-	{
-		check: self.attributes.size() >= 3
-		message: "Entity   "+ self.name + "   this condition fails; entity has lessthan or no entity "
-	}
-}
-
-
-//checking for Content with exactly 3 entities
-context Content
-{
-	critique HasThreeEntites
-	{
-		check: self.entity.size() = 3
-		message: "Content   "+ self.name + "   this condition fails; contents has more than 3 entitess or no entity "
-	}
-
-}*/
-		
-/*context Entity
-{
-	constraint HasMorethanThreeAttribute
-	{
-		check: self.attributes.size() >= 3
-		message: "Entity   "+ self.name + "   this condition fails; entities has more than 3 attribues"
-	}
+	//Content (Entity and Attribute) should has special characters
+ 	constraint ValidEntity
+ 	{
+    	guard : self.type.name.toUpperCase().contains("ENTITY") 
+		check : self.name.isNotPlain()
+		message : "Error : Not Has Valid Entity Name | " + self.name
+ 	}
+  
+	constraint ValidAttributes
+ 	{
+    	guard : self.type.name.toUpperCase().contains("ATTRIBUTES") 
+		check : self.name.isNotPlain()
+		message : "Error : Not Has Valid Attributes Name | " + self.name
+ 	}
+ 	
+ 	//Content (Entity and Attribute) should not more than 5 characters
+ 	constraint isEntityTooLong
+ 	{
+    	guard : self.type.name.toUpperCase().contains("ENTITY") 
+		check : self.name.isNameTooLong()
+		message : "Error : Entity Name can not more than 5 characters | " + self.name
+ 	}
+  
+	constraint isAttributesTooLong
+ 	{
+    	guard : self.type.name.toUpperCase().contains("ATTRIBUTES") 
+		check : self.name.isNameTooLong()
+		message : "Error : Attributes Name can not more than 5 characters | " + self.name
+ 	}
+ 	
 }
 
-//checking if any contents have null value
-context Content
-{
-	constraint NameNotEmpty
-	{
-		check: self.name.isDefined()
-	}
-}
-		
- //constraint checking for primarykey in all the attributes in our model		 
-context Attribute
-{		
-	constraint Attributeisprimarykey
-	{
-		check: "Attributes"  + self.name.type() = Boolean
-				
-	}
+operation String isNotPlain() : Boolean {
+  return self.matches("[A-Za-z\\s]+") == false;
 }
 
-
-//checking for Content with exactly 3 entities
-context DataType
-{
-	critique EmailNotValid
-	{
-		check: self.Email.contains("@") == false
-		message: "Email   "+ self.Email + "   is in incorrect style "
-	}
-}
-
-//checking for Content with exactly 3 entities
-context DataType
-{
-	critique EmailNotValid2
-	{
-		check: self.Email.contains(".com") == false
-		message: "Email   "+ self.Email + "   is in incorrect style "
-	}
-}*/
-
-context Data
-{
-	critique HasEntities
-	{
-		check: self.contents.size() <= 3
-		message: "Entity   "+ self.name + "   this condition fails; entities has more than 3 attribues"
-		//check: (self.type.name.toUpperCase().contains("ENTITY") or self.type.name.toUpperCase().contains("ENTITIES")).size() >= 3
-		//message: "Entity   "+ self.name + "   this condition fails; entity has less than 3 or no entity "
-	}
+operation String isNameTooLong() : Boolean {
+  return self.length() > 5;
 }

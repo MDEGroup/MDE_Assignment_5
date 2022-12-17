@@ -1,3 +1,4 @@
+ 
  /* operations in EOL, checking if all the entities in our model has attribute
 
 for (entity in Entity.all){

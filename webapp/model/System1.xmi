@@ -1,0 +1,331 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<System xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns="assignment/webapp"
+    xsi:schemaLocation="assignment/webapp webapp.ecore">
+  <Data>
+    <Content
+        xsi:type="Entity"
+        name="Drink"
+        RelationA="Drink">
+      <Content
+          xsi:type="Attributes"
+          name="DrinkID"
+          Type="int"
+          PrimaryKey="true"/>
+      <Content
+          xsi:type="Attributes"
+          name="DrinkName"/>
+      <Content
+          xsi:type="Attributes"
+          name="DrinkPicture"
+          Type="image"/>
+      <Content
+          xsi:type="Attributes"
+          name="DrinkOverAllRating"
+          Type="float"/>
+      <Content
+          xsi:type="Attributes"
+          name="Description"
+          Type="text"/>
+      <Content
+          xsi:type="Attributes"
+          name="Price"
+          Type="float"/>
+      <Content
+          xsi:type="Attributes"
+          name="Currency"
+          Type="currency"/>
+      <Content
+          xsi:type="Attributes"
+          name="Category"/>
+      <Entity
+          xsi:type="Attributes"
+          name="Ingredients"
+          Type="List"/>
+    </Content>
+    <Content
+        xsi:type="Entity"
+        name="Review"
+        RelationA="review">
+      <Content
+          xsi:type="Attributes"
+          name="ReviewID"
+          Type="int"
+          PrimaryKey="true"/>
+      <Content
+          xsi:type="Attributes"
+          name="ReviewText"
+          Type="text"/>
+      <Content
+          xsi:type="Attributes"
+          name="ReviewRating"
+          Type="int"/>
+      <Content
+          xsi:type="Attributes"
+          name="ReviewPicture"
+          Type="image"/>
+      <Content
+          xsi:type="Attributes"
+          name="DrinkID"
+          Type="int"
+          ForeignKey1="//@Data.0/@Content.0/@Content.0"/>
+    </Content>
+    <Content
+        xsi:type="Entity"
+        name="Reviewer"
+        RelationA="reviewer">
+      <Content
+          xsi:type="Attributes"
+          name="ReviewerID"
+          Type="int"
+          PrimaryKey="true"/>
+      <Content
+          xsi:type="Attributes"
+          name="ReviewerUserName"/>
+      <Content
+          xsi:type="Attributes"
+          name="ReviewerFirstName"/>
+      <Content
+          xsi:type="Attributes"
+          name="ReviewerLastName"/>
+      <Content
+          xsi:type="Attributes"
+          name="ReviewerEmail"
+          Type="Email"/>
+    </Content>
+    <Content
+        xsi:type="Entity"
+        name="Bartender"
+        RelationA="bartender">
+      <Content
+          xsi:type="Attributes"
+          name="BartenderID"
+          Type="int"
+          PrimaryKey="true"/>
+      <Content
+          xsi:type="Attributes"
+          name="BartenderFirstName"/>
+      <Content
+          xsi:type="Attributes"
+          name="BartenderLastName"/>
+      <Entity
+          xsi:type="Attributes"
+          name="DrinkID"
+          ForeignKey1="//@Data.0/@Content.3/@Entity"/>
+    </Content>
+  </Data>
+  <Content>
+    <Page name="DrinkListPage">
+      <Content>
+        <Content
+            xsi:type="DynamicContent">
+          <DynamicContent
+              xsi:type="Entity"
+              name="DrinkList"
+              RelationA="Drink">
+            <DynamicContent
+                xsi:type="Attributes"
+                name="DrinkList ID"
+                RelationA="DrinkListID"
+                PrimaryKey="true"/>
+            <Entity
+                xsi:type="Attributes"
+                name="Name of Drink"
+                RelationA="DrinkName"/>
+          </DynamicContent>
+        </Content>
+      </Content>
+    </Page>
+    <Page name="DrinkReviewPage">
+      <Content>
+        <Content
+            xsi:type="DynamicContent">
+          <Content
+              xsi:type="Entity"
+              name="Drink"
+              RelationA="Drink">
+            <Content
+                xsi:type="Individual"
+                name="Drink">
+              <Content
+                  xsi:type="Attributes"
+                  name="ID of Drink"
+                  RelationA="drinkID"
+                  Type="int"
+                  PrimaryKey="true"/>
+              <Content
+                  xsi:type="Attributes"
+                  name="Name of Drink"
+                  RelationA="DrinkName"/>
+              <Content
+                  xsi:type="Attributes"
+                  name="Collection of Drink Pictures"
+                  RelationA="DrinkPictures"
+                  Type="images"/>
+              <Content
+                  xsi:type="Attributes"
+                  name="Drink Description"
+                  RelationA="DrinkDescription"
+                  Type="text"/>
+              <Content
+                  xsi:type="Attributes"
+                  name="Price of Drink"
+                  RelationA="DrinkPrice"
+                  Type="int"/>
+              <Content
+                  xsi:type="Attributes"
+                  name="Currency"
+                  RelationA="DrinkCurrency"
+                  Type="currency"/>
+              <Content
+                  xsi:type="Attributes"
+                  name="Ingredients of the Drink"
+                  RelationA="DrinkIngredients"
+                  Type="List"/>
+              <DynamicContent
+                  xsi:type="Attributes"
+                  name="Drink Ratings"
+                  RelationA="DrinkRatings"
+                  Type="int"/>
+            </Content>
+          </Content>
+          <Content
+              xsi:type="Entity"
+              name="Reviewer"
+              RelationA="Reviewer">
+            <Content
+                xsi:type="Individual"
+                name="Reviewer">
+              <Content
+                  xsi:type="Attributes"
+                  name="ID of Reviewer"
+                  RelationA="reviewerID"
+                  Type="int"
+                  PrimaryKey="true"/>
+              <Content
+                  xsi:type="Attributes"
+                  name="Reviewer Username"
+                  RelationA="ReviewerUsername"/>
+              <Content
+                  xsi:type="Attributes"
+                  name="Review Picture"
+                  RelationA="ReviewerPicture"
+                  Type="image"/>
+              <Content
+                  xsi:type="Attributes"
+                  name="Reviewer Email"
+                  RelationA="ReviewerEmail"
+                  Type="Email"/>
+              <Content
+                  xsi:type="Attributes"
+                  name="Reviewer First Name"
+                  RelationA="ReviewerFirstName"/>
+              <Content
+                  xsi:type="Attributes"
+                  name="Reviewer Last Name"
+                  RelationA="ReviewerLastName"/>
+              <Content
+                  xsi:type="Attributes"
+                  name="Review Rating"
+                  RelationA="ReviewerRating"
+                  Type="int"/>
+              <Content
+                  xsi:type="Attributes"
+                  name="Review Text"
+                  RelationA="ReviewerText"/>
+            </Content>
+          </Content>
+          <Content
+              xsi:type="Entity"
+              name="Bartender"
+              RelationA="Bartender">
+            <Content
+                xsi:type="Individual"
+                name="Bartender">
+              <Content
+                  xsi:type="Attributes"
+                  name="ID of Bartender"
+                  RelationA="bartenderID"
+                  Type="int"
+                  PrimaryKey="true"/>
+              <Content
+                  xsi:type="Attributes"
+                  name="Bartender First Name"
+                  RelationA="BartenderFirstName"/>
+              <Content
+                  xsi:type="Attributes"
+                  name="Bartender Last Name"
+                  RelationA="BartenderLastName"/>
+            </Content>
+          </Content>
+        </Content>
+        <Content
+            name="Static Content">
+          <Content
+              xsi:type="Index"
+              name="Bar">
+            <Content
+                xsi:type="Attributes"
+                name="ID of Bar"
+                RelationA="barID"
+                Type="int"
+                PrimaryKey="true"/>
+            <Content
+                xsi:type="Attributes"
+                name="Bar Name"
+                RelationA="BarName"/>
+            <Content
+                xsi:type="Attributes"
+                name="Bar Address"
+                RelationA="BarAddress"/>
+          </Content>
+        </Content>
+        <Content
+            xsi:type="Form"
+            name="Review Form"
+            DataT="Review">
+          <Elements>
+            <Element
+                name="Add Ratings Component"
+                Attribute="//@Content.0/@Page.1/@Content.0/@Content.0/@Content.1/@Content.0/@Content.6"
+                Tooltip="Please add a rating for this drink"/>
+            <Element
+                name="Add Picture Component"
+                Attribute="//@Content.0/@Page.1/@Content.0/@Content.0/@Content.1/@Content.0/@Content.2"
+                Label="Add Picture"
+                Tooltip="Please add pictures by click here to open uploader or drag and drop them here"/>
+            <Element
+                name="Textbox"
+                Attribute="//@Content.0/@Page.1/@Content.0/@Content.0/@Content.1/@Content.0/@Content.7"
+                Label="...."
+                Tooltip="Please add a review"/>
+          </Elements>
+        </Content>
+        <Content
+            xsi:type="Form"
+            name="Review Card"
+            Method="GET"
+            DataT="Review">
+          <Elements>
+            <Element
+                name="Add Ratings Component"
+                Attribute="//@Content.0/@Page.1/@Content.0/@Content.0/@Content.1/@Content.0/@Content.6"
+                Tooltip=""/>
+            <Element
+                name="Add Picture Component"
+                Attribute="//@Content.0/@Page.1/@Content.0/@Content.0/@Content.1/@Content.0/@Content.2"
+                Label=""
+                Tooltip=""/>
+            <Element
+                name="ReviewText"
+                Attribute="//@Content.0/@Page.1/@Content.0/@Content.0/@Content.1/@Content.0/@Content.7"
+                Label=""
+                Tooltip="C"/>
+          </Elements>
+        </Content>
+      </Content>
+    </Page>
+  </Content>
+</System>

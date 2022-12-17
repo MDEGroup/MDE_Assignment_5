@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="webapp" nsURI="assignment/webapp" nsPrefix="">
+  <eClassifiers xsi:type="ecore:EClass" name="System">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Data" upperBound="-1" eType="#//Data"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Content" upperBound="-1"
+        eType="#//Content" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Page" lowerBound="1" upperBound="-1"
+        eType="#//Page" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Element" eSuperTypes="#//Elements #//NamedElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Attribute" eType="#//Attributes"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Label" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Tooltip" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Content" eSuperTypes="#//System #//NamedElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="DynamicContent" eType="#//DynamicContent"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DynamicContent" eSuperTypes="#//Content">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Entity" eType="#//Entity"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="AttributesD" upperBound="-1"
+        eType="#//Attributes" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Data" eSuperTypes="#//System">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Entity" eType="#//Entity"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Index" eSuperTypes="#//DynamicContent">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Individual" lowerBound="1"
+        upperBound="-1" eType="#//Individual" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Individual" eSuperTypes="#//DynamicContent #//Index">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Index" eType="#//Index"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Page" eSuperTypes="#//NamedElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Content" lowerBound="1"
+        upperBound="-1" eType="#//Content" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Entity" eSuperTypes="#//DynamicContent #//NamedElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Features" lowerBound="1"
+        upperBound="-1" eType="#//Features" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="References" lowerBound="1"
+        upperBound="-1" eType="#//References" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="RelationA" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="RelationR" lowerBound="1"
+        eType="#//Relation" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Features" eSuperTypes="#//Entity #//NamedElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Reference" eType="#//References"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="AttributesF" eType="#//Attributes"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Form" eSuperTypes="#//Content">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Elements" lowerBound="1"
+        upperBound="-1" eType="#//Elements" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Entity" eType="#//Entity"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Method" eType="#//Methodtype"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="DataT" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Elements" eSuperTypes="#//NamedElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Element" lowerBound="1"
+        upperBound="-1" eType="#//Element" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Relation" eSuperTypes="#//Entity">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Left" lowerBound="1" eType="#//Entity"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Right" lowerBound="1" eType="#//Entity"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="References" eSuperTypes="#//Features #//Entity">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ForeignKey" eType="#//Entity"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Attributes" eSuperTypes="#//Features">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Type" eType="#//DataType"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="PrimaryKey" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ForeignKey1" eType="#//Attributes"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="Methodtype">
+    <eLiterals name="POST" literal="POST"/>
+    <eLiterals name="GET" literal="GET"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="DataType">
+    <eLiterals name="string" literal="string"/>
+    <eLiterals name="float" literal="float"/>
+    <eLiterals name="int" literal="int"/>
+    <eLiterals name="percent" literal="percent"/>
+    <eLiterals name="text" literal="text"/>
+    <eLiterals name="bool" literal="bool"/>
+    <eLiterals name="date" literal="date"/>
+    <eLiterals name="image" literal="image"/>
+    <eLiterals name="file" literal="file"/>
+    <eLiterals name="currency" literal="currency"/>
+    <eLiterals name="images" literal="images"/>
+    <eLiterals name="List" literal="List"/>
+    <eLiterals name="Email" literal="Email"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="NamedElement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+</ecore:EPackage>
