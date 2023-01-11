@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <viewpoint:DAnalysis xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:viewpoint="http://www.eclipse.org/sirius/1.1.0" uid="_UWgooHuuEe2r0rqmwCMs2g" version="15.0.0.202209061200">
-  <semanticResources>webapplication.ecore</semanticResources>
   <semanticResources>System.xmi</semanticResources>
   <semanticResources>System.genmodel</semanticResources>
   <semanticResources>System1.xmi</semanticResources>
+  <semanticResources>assignment5model.xmi</semanticResources>
+  <semanticResources>Assigment5model.xmi</semanticResources>
+  <semanticResources>webapplication.ecore</semanticResources>
 </viewpoint:DAnalysis>

@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<System xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns="assignment/webapplication">
+  <Data>
+    <Content
+        xsi:type="Entity"
+        name="Chicken Flavour">
+      <Entity
+          xsi:type="Attributes"
+          name="FlavourID"/>
+      <AttributesD
+          name="FlavourName"/>
+    </Content>
+    <Content
+        xsi:type="Entity"
+        name="Burger Type">
+      <Entity
+          xsi:type="Attributes"
+          name="TypeID"/>
+      <AttributesD
+          name="TypeName"/>
+    </Content>
+    <Content
+        xsi:type="Entity"
+        name="French Fries">
+      <Entity
+          xsi:type="Attributes"
+          name="mixedID"/>
+      <AttributesD
+          name="mixedName"/>
+    </Content>
+  </Data>
+  <Page name="">
+    <Content>
+      <DynamicContent
+          name="">
+        <Content
+            xsi:type="Entity"
+            name="Chicken Set A">
+          <Entity
+              xsi:type="Attributes"
+              name="Chicken Nuggets A"/>
+          <Features
+              name="Sauce A"/>
+        </Content>
+        <Content
+            xsi:type="Entity"
+            name="Chicken Set B">
+          <Entity
+              xsi:type="Attributes"
+              name="Chicken Nuggets B"/>
+          <Features
+              name="Sauce B"/>
+        </Content>
+        <Content
+            xsi:type="Entity"
+            name="Burger Set A">
+          <Entity
+              xsi:type="Attributes"
+              name="Burger A"/>
+          <Features
+              name="Sauce A"/>
+        </Content>
+        <Content
+            xsi:type="Entity"
+            name="Burger Set B">
+          <Entity
+              xsi:type="Attributes"
+              name="Burger B"/>
+          <Features
+              name="Sauce B"/>
+        </Content>
+        <Content
+            xsi:type="Entity"
+            name="French Fries Set A">
+          <Entity
+              xsi:type="Attributes"
+              name="French Fries A"/>
+          <Features
+              name="Sauce A"/>
+        </Content>
+        <Content
+            xsi:type="Entity"
+            name="French Fries Set B">
+          <Entity
+              xsi:type="Attributes"
+              name="French Fries B"/>
+          <Features
+              name="Sauce B"/>
+        </Content>
+      </DynamicContent>
+    </Content>
+  </Page>
+</System>

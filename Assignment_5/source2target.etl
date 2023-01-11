@@ -1,0 +1,130 @@
+rule Sourcemodel2Targetmodel
+
+ 
+
+transform s :Sourcemodel!System
+
+to t : Targetmodel!System{
+
+ 
+
+t.Content = s.Content;
+
+t.Page ::= s.Page;
+
+t.Data = t.Data;
+}
+
+ 
+
+ 
+
+rule page2page
+
+transform t : Sourcemodel!Page
+
+to d : Targetmodel!Page {
+
+ 
+
+d.Content = t.Content;
+
+ 
+
+ 
+
+}
+
+ 
+
+@lazy
+
+rule Dynamicconcept2Index
+
+transform s : Sourcemodel!DynamicContent
+
+to t : Targetmodel!DynamicContent {
+
+ 
+
+t.Index = s.Entity;
+
+t.Individual = s.Entity;
+
+ 
+
+}
+
+rule Entity2Index
+
+transform s : Sourcemodel!Entity
+
+to t : Targetmodel!Index {
+
+ 
+
+t.Entity = s.Features;
+
+t.Entity = s.References;
+
+
+}
+
+ 
+
+rule Entity2Entity
+
+transform s : Sourcemodel!Entity
+
+to t : Targetmodel!Entity{
+
+t.Features = s.Features;
+ 
+
+}
+
+//rule Reference2Reference
+//
+//transform s : Sourcemodel!Reference
+//
+//to t : Targetmodel!Reference{
+//
+//t.entity = s.entity;
+//
+//t.attribute = s.attribute;
+//
+// 
+//
+//}
+
+ 
+
+rule Attribute2Attribute
+
+transform s : Sourcemodel!Attributes
+
+to t : Targetmodel!Attributes{
+
+//t.Type = s.Type;
+
+t.PrimaryKey = s.PrimaryKey;
+
+ 
+
+}
+
+ 
+
+//rule Element2Element
+//
+//transform s : Sourcemodel!Element
+//
+//to t : Targetmodel!Element{
+//
+//t.Tooltips = s.Tooltips;
+//
+//t.label = s.Labels;
+//
+// 
+//
+//}

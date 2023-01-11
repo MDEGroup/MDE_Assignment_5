@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="WebApplication" nsURI="assignment/webapplication" nsPrefix="">
-  <eClassifiers xsi:type="ecore:EClass" name="WebApplication">
+  <eClassifiers xsi:type="ecore:EClass" name="System">
     <eStructuralFeatures xsi:type="ecore:EReference" name="Data" upperBound="-1" eType="#//Data"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="Content" upperBound="-1"
@@ -15,17 +15,29 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="Tooltip" lowerBound="1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Content" eSuperTypes="#//WebApplication #//NamedElement">
+  <eClassifiers xsi:type="ecore:EClass" name="Content" eSuperTypes="#//System #//NamedElement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="DynamicContent" eType="#//DynamicContent"
         containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="DynamicContent" eSuperTypes="#//Content">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="Entity" eType="#//Entity"
-        containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="AttributesD" upperBound="-1"
+  <eClassifiers xsi:type="ecore:EClass" name="DynamicContent" eSuperTypes="#//NamedElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Index" upperBound="-1"
+        eType="#//Index" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Individual" upperBound="-1"
+        eType="#//Individual" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Index" eSuperTypes="#//NamedElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Entity" upperBound="-1"
+        eType="#//Entity" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Attributes" upperBound="-1"
         eType="#//Attributes" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Data" eSuperTypes="#//WebApplication">
+  <eClassifiers xsi:type="ecore:EClass" name="Individual" eSuperTypes="#//NamedElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Attributes" upperBound="-1"
+        eType="#//Attributes" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Entity" upperBound="-1"
+        eType="#//Entity" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Data" eSuperTypes="#//System">
     <eStructuralFeatures xsi:type="ecore:EReference" name="Entity" eType="#//Entity"
         containment="true"/>
   </eClassifiers>
@@ -41,7 +53,7 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="RelationA" lowerBound="1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="RelationR" lowerBound="1"
-        containment="true"/>
+        eType="#//Relation" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Features" eSuperTypes="#//Entity #//NamedElement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="Reference" eType="#//References"
@@ -56,6 +68,12 @@
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="Method" eType="#//Methodtype"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="DataT" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Relation" eSuperTypes="#//Entity">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Left" lowerBound="1" eType="#//Entity"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Right" lowerBound="1" eType="#//Entity"
+        containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="References" eSuperTypes="#//Features #//Entity">
     <eStructuralFeatures xsi:type="ecore:EReference" name="ForeignKey" eType="#//Entity"

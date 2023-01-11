@@ -1,6 +1,6 @@
-# MDE_Assignment_4
+# MDE_Assignment_5
 
-This repository is created for the [Assignment A4](https://univaq-my.sharepoint.com/:b:/g/personal/korawit_rupanya_student_univaq_it/EbG9UvR_TopDmZoIaS5IHUIBT82oCxZce_heTPQyoa4OSQ?e=pviCfs) as apart of MDE(Model Driven Engineering) class 2022/2023 semester at Univaq(University of L'Aquila).
+This repository is created for the [Assignment A5](https://univaq-my.sharepoint.com/:b:/g/personal/korawit_rupanya_student_univaq_it/EeXlU3zp6IFFgWG8vcoNEgwBXTjcRWB3twHIa8TPpMjmXg?e=NgGT3Y) as apart of MDE(Model Driven Engineering) class 2022/2023 semester at Univaq(University of L'Aquila).
 
 Group name: Chicken Restaurant
 ---
@@ -10,21 +10,35 @@ Group name: Chicken Restaurant
 2. Mercy Bamiduro 286705
 3. Korawit Rupanya 286847
 ---
->this project perform “Glot”a domain-specific language (DSL) for specifying Web Applications on the EMF platform by using one among the following tools notations:
-- EMF
-- Emfatic
-- OCL In Ecore
+>The assignment make use of model transformations by using the following languages/frameworks:
+- Epsilon (ETL and EGL) 
 
-## Task A4.1
->Define a metamodel in Emfatic or EMF for describing your domain(as illustrated during the course) 
+## Task A5.1
+>Apply different refactoring operations on the metamodel defined in A2 to create an updated version. Those refinements should include:
+> - deletion and addition of concepts,
+> - concept renaming,
+> - structural refinements, for instance:
+>   - adding/removing hierarchies,
+>   - adding/removing structural features (i.e., attributesand references)
+>   - change attribute
 
-Based on our previous projects developed on MPS, we defined 16 metaclasses. Each metaclass contains at least one attribute or reference as demonstrated in the screenshot below. Also, the metamodel was properly defined and contains inheritance, containment, enumeration types, attributes, data types, etc.
+> Such refining steps are preliminary for the realization of task A3.2. At this stage, we will evaluate the complexity of the refining steps and their correct realization.
+
+Here is the old model that we have
 
 <img width="728" alt="Screenshot 2022-12-16 at 23 47 47" src="https://user-images.githubusercontent.com/93517988/208234029-97606eab-87f4-4d4b-8714-b25f4e3fd1db.png">
 
+And here is the new model that we refactor, we called it a source model
+- deletion and addition of concepts => Deleted Index & Individual
+- concept renaming => FROM System TO WebApplication
+- structural refinements, for instance:
+    - adding/removing hierarchies => As we deleted Index & Individual the hierarchies had been removed.
+    - adding/removing structural features (i.e., attributesand references) => We remove the Relation.
+    - change attribute => 
 
-## Task A4.2
->Instantiate the metamodel by two concrete instance and make sure that each concept(represented as metaclasses) at the metamodel level can be instantiated in your models.
+
+## Task A5.2
+>Define a model-to-model transformation to migrate models conforming to the initial metamodel version to the one refined in task A3.1. For this task,feel free to choose your preferred transformation language, i.e., ATL or ETL.Alternatively,the students can chooce an existing relational database metamodel from the existing model repositories (e.g., https://web.imt-atlantique.fr/x-info/atlanmod/index.php?title=Ecore)and transform a web modelto a relational DB model.
 
 - Our metamodel was further instantiated by the first concrete instances named <b><i>“System.xmi”</i></b> with each concept represented in the above metaclasses, well instantiated in the model as seen in the image below;
 
@@ -35,8 +49,12 @@ Based on our previous projects developed on MPS, we defined 16 metaclasses. Each
 <img width="728" alt="Screenshot 2022-12-17 at 00 06 29" src="https://user-images.githubusercontent.com/93517988/208234355-d4d98f72-ade7-4bdc-8961-b8ff45c62cb9.png">
 
 
-## Task A4.3
->Define metamodel constraints(and“critiques”in the case of EVL),operation, and derived fields in OCL or EVL/EOL
+## Task A5.3
+>Define a model-to-text transformation that generates SQL statements for generating SQL tables and queries.By resembling the demo implemented during the lectures,for each entity the M2T should generate:
+>    - a CREATE table statement,
+>    - a SELECT(NOT *) statement,•a SELECT statement with WHERE isPK condition.
+
+> For this task,feel free to choose your preferred model-to-text transformation (M2T) language, i.e., Acceleo or EGL
 
 We have defined the following constraints and critique for both models as demonstrated in the image below and available in the video recording attached also.
 - To check if the Entity has special characters.
