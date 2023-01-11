@@ -34,9 +34,13 @@ And here is the new model that we refactor, we called it a source model
 - structural refinements, for instance:
     - adding/removing hierarchies => As we deleted Index & Individual the hierarchies had been removed.
     - adding/removing structural features (i.e., attributesand references) => We remove the Relation.
+    
+<img width="366" alt="Screenshot 2566-01-11 at 04 47 33" src="https://user-images.githubusercontent.com/32285708/211706362-563e35b8-cf3d-4614-9c2c-f485d7818885.png">
+<img width="367" alt="Screenshot 2566-01-11 at 04 47 57" src="https://user-images.githubusercontent.com/32285708/211706400-584c3c0f-6acc-463a-95da-d1d5c98c0c02.png">
 
 ## Task A5.2
 >Define a model-to-model transformation to migrate models conforming to the initial metamodel version to the one refined in task A3.1. For this task,feel free to choose your preferred transformation language, i.e., ATL or ETL.Alternatively,the students can chooce an existing relational database metamodel from the existing model repositories (e.g., https://web.imt-atlantique.fr/x-info/atlanmod/index.php?title=Ecore)and transform a web model to a relational DB model.
+
 
 
 
